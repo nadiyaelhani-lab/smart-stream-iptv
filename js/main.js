@@ -20,7 +20,9 @@ async function initApp() {
 
             const filtered = channels.filter(channel =>
                 channel.name.toLowerCase().includes(text) ||
-                channel.channelNumber.includes(text)
+                channel.channelNumber.includes(text) ||
+                channel.category.toLowerCase().includes(text)
+
             );
 
             displayChannels(filtered, showPreview);
