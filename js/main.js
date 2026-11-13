@@ -32,7 +32,11 @@ async function initApp() {
         });
 
     } catch (error) {
-        console.error("Erreur :", error.message);
+    console.error("Erreur :", error.message);
+
+    const errorMessage = document.querySelector("#error");
+    errorMessage.textContent = "Impossible de charger les chaînes TV.";
+    errorMessage.classList.remove("hidden");
 
     } finally {
         document.querySelector("#loading").classList.add("hidden");
