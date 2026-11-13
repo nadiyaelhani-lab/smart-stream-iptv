@@ -4,8 +4,17 @@ export function displayChannels(channels, onSelect) {
 
     list.innerHTML = "";
 
-    channels.forEach(channel => {
-        const button = document.createElement("button");
+const categories = [...new Set(channels.map(channel => channel.category))];
+
+categories.forEach(category => {
+    const heading = document.createElement("h3");
+    heading.textContent = category;
+    heading.className = "text-purple-400 font-bold mt-4 mb-2";
+    list.appendChild(heading);
+
+    channels.filter(channel => channel.category === category)
+        .forEach(channel => {
+                    const button = document.createElement("button");
 
         button.className =
             "w-full flex items-center gap-3 p-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-left";
@@ -36,4 +45,5 @@ export function displayChannels(channels, onSelect) {
 });
         list.appendChild(button);
     });
+});
 }
