@@ -1,5 +1,5 @@
 
-export function displayChannels(channels) {
+export function displayChannels(channels, onSelect) {
     const list = document.querySelector("#channels-list");
 
     list.innerHTML = "";
@@ -21,6 +21,19 @@ export function displayChannels(channels) {
 
         button.appendChild(logo);
         button.appendChild(title);
+      button.addEventListener("click", () => {
+
+    document.querySelectorAll("#channels-list button")
+        .forEach(btn => {
+            btn.classList.remove("bg-purple-600");
+            btn.classList.add("bg-slate-800");
+        });
+
+    button.classList.remove("bg-slate-800");
+    button.classList.add("bg-purple-600");
+
+    onSelect(channel);
+});
         list.appendChild(button);
     });
 }
