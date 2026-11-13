@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Stream TV</title>
+
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-950 text-white min-h-screen">
+
+  <header class="bg-slate-900 p-5 border-b border-slate-800">
+    <h1 class="text-2xl font-bold text-purple-400">
+    </h1>
+  </header>
+
+  <main class="flex flex-col md:flex-row min-h-screen">
+
+    <aside class="w-full md:w-80 md:shrink-0 bg-slate-900 p-5">
+      <h2 class="text-xl font-bold mb-4">Chaînes TV</h2>
+
+      <input
+        id="search"
+        type="search"
+        placeholder="Recherche TV en direct..."
+        class="w-full p-3 rounded-lg bg-slate-800 border border-slate-700 focus:border-purple-500 outline-none mb-5"
+      >
+
+      <div id="channels-list" class="space-y-3"></div>
+    </aside>
+
+    <section class="flex-1 min-w-0 p-5 md:p-10">
+      <div class="max-w-4xl mx-auto">
+
+        <p class="text-purple-400 font-semibold mb-2">
+        </p>
+
+        <h2 id="preview-title" class="text-3xl font-bold mb-6">
+          
+        </h2>
+
+        <div class="aspect-video bg-slate-800 rounded-2xl overflow-hidden">
+          <img
+            id="preview-image"
+            src="https://placehold.co/800x450?text=Smart+Stream+TV"
+            alt="Prévisualisation TV"
+            class="w-full h-full object-cover"
+          >
+        </div>
+
+        <p id="preview-number" class="text-slate-400 mt-5">
+          Choisissez une chaîne dans la liste.
+        </p>
+
+        <div id="loading" class="hidden mt-5 text-purple-400">
+          Chargement des chaînes...
+        </div>
+
+        <p id="error" class="hidden mt-5 text-red-400"></p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+</html>
