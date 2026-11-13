@@ -15,6 +15,7 @@ async function initApp() {
         displayChannels(channels, showPreview);
 
         search.addEventListener("input", function () {
+            
             const text = search.value.toLowerCase().trim();
 
             const filtered = channels.filter(channel =>
@@ -23,6 +24,9 @@ async function initApp() {
             );
 
             displayChannels(filtered, showPreview);
+              if (filtered.length === 1) {
+        showPreview(filtered[0]);
+        }
         });
 
     } catch (error) {
